@@ -1,0 +1,123 @@
+openssl reg -out ingress-ci00571303-sns-ift.csr -newkey rsa:2048 -nodes -keyout ingress-ci-00571303-sns-ift.key -config ingress-ci-00571303-sns-ift.cfg
+Расскажи подробно
+
+Команда, которую вы предоставили, использует утилиту OpenSSL для создания запроса на подпись сертификата (CSR) и соответствующего закрытого ключа. Давайте разберем каждый параметр подробнее:
+1. `openssl`: Это команда для запуска OpenSSL, открытой криптографической библиотеки, которая предоставляет различные криптографические функции и утилиты.
+2. `req`: Это подкоманда OpenSSL, используемая для работы с запросами на подпись сертификата (CSR) и самими сертификатами.
+3. `-out ingress-ci00571303-sns-ift.csr`: Опция, указывающая имя файла, в который будет записан созданный запрос на подпись сертификата (CSR).
+4. `-newkey rsa:2048`: Опция, указывающая на генерацию нового ключевого набора с использованием алгоритма RSA и длиной ключа 2048 бит.
+5. `-nodes`: Опция, указывающая не шифровать (не защищать паролем) закрытый ключ. Если этот флаг присутствует, то при генерации закрытого ключа не потребуется вводить пароль.
+6. `-keyout ingress-ci-00571303-sns-ift.key`: Опция, указывающая имя файла, в который будет записан созданный закрытый ключ.
+7. `-config ingress-ci-00571303-sns-ift.cfg`: Опция, указывающая на файл конфигурации, который содержит параметры, управляющие процессом генерации CSR. Файл конфигурации может содержать информацию, такую как информация о субъекте (владельце сертификата), расширенные параметры и другие настройки.
+Таким образом, после выполнения этой команды у вас должны появиться два файла: `ingress-ci00571303-sns-ift.csr` (CSR) и `ingress-ci-00571303-sns-ift.key` (закрытый ключ).
+Обратите внимание, что для успешного создания CSR у вас также должен быть правильно настроен файл конфигурации (`ingress-ci-00571303-sns-ift.cfg`). В этом файле должна быть указана информация о субъекте (владельце сертификата), например, страна, штат, организация и т.д.
+
+
+[req]
+default_bits - 2048
+distinguished_name - req_distinguished_name
+req_extensions = req_ext
+prompt = no 
+
+[req_distinguished_ name]
+countryName = RU
+stateOrProvinceName = MOW
+localityName= MOW
+organizationName = Savings Bank of the Russian Federation
+commonName = ingress-ci00571303-sns-ift
+
+[req_ext]
+SubjectAltName = @alt_ names
+
+[alt_names]
+DNS.1 = ingress-sns-in-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.2 = ingress-sns-in-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.3 = ingress-sns-core-https.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.4 = ingress-sns-core-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.5 =  ingress-sns-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.6 = ingress-sns-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.7 = ingress-sns-in-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbnf.ru
+DNS.8 = ingress-sns-in-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.9 = ingress-sns-core-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.10 = ingress-sns-core-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.11 = ingress-sns-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.12 = ingress-sns-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.13 = ingress-sns-uex-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.14 = ingress-sns-uex-ott.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.15 = ingress-sns-uex-https.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
+DNS.16 = ingress-sns-uex-ott.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
+DNS.17 = ingress-sns-ui-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.18 = ingress-sns-ui-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.19 = ingress-sns-ui-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.20 = ingress-sns-ui-ott.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
+DNS.21 = sns-in.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.22 = sns-in.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.23 = sns-core.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.24 = sns-core.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.25 = sns-uex.mtls.ift-gen1-mlb.ocp-geo.delta.sbrf.ru
+DNS.26 = sns-uex.ott.ift-gen1-mlb.ocp-geo.delta.sbrf.ru
+DNS.27 = sns-ui.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.28 = sns-ui.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.29 = sns.mtls.ift-gen1-mlb.ocp-geo.delta.sbnf.ru
+DNS.30 = sns.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+
+[v3_ext]
+authoritykeyIdentifier=keyid,issuer:always
+basicConstraints=CA:FALSE
+keyUsage=keyEncipherment,dataEncipherment
+extendedKeyUsage=serverAuth,clientAuth
+subjectAltName=@alt_names
+
+
+-----------------------------------------------------------------------------------------------------------
+Ваш файл конфигурации (ingress-ci-00571303-sns-ift.cfg) выглядит хорошо настроенным для создания запроса на подпись сертификата (CSR) с использованием OpenSSL. Давайте рассмотрим основные секции и параметры в вашем файле конфигурации:
+
+Секция [req]:
+
+default_bits = 2048: Устанавливает длину ключа в 2048 бит.
+distinguished_name = req_distinguished_name: Указывает на секцию, где определены параметры информации о владельце сертификата.
+req_extensions = req_ext: Указывает на секцию, где определены расширенные параметры запроса на подпись сертификата.
+prompt = no: Отключает интерактивный режим запроса данных.
+Секция [req_distinguished_name]:
+
+Задает информацию о владельце сертификата, такую как страна (countryName), регион (stateOrProvinceName), город (localityName), организация (organizationName), общее имя (commonName).
+Секция [req_ext]:
+
+SubjectAltName = @alt_names: Указывает на секцию, где определены альтернативные имена (DNS-имена) для сертификата.
+Секция [alt_names]:
+
+Задает список альтернативных имен (DNS-имен), которые будут включены в сертификат. Это важно для поддержки множественных доменных имен в одном сертификате.
+Секция [v3_ext]:
+
+Определяет расширенные параметры для сертификата, такие как идентификатор ключа авторитета, базовые ограничения, использование ключа и дополнительное использование ключа.
+В целом, ваш файл конфигурации выглядит правильно, и он должен быть подходящим для создания CSR с учетом предоставленных параметров и альтернативных имен. Убедитесь, что пути и имена файлов указаны верно, и выполните команду для создания CSR с вашим файлом конфигурации.
+
+
+
+После выполнения этой команды у вас будет создан CSR, который можно предоставить центру сертификации для подписи. Полученный от центра сертификации сертификат можно использовать, например, для использования HTTPS на вашем веб-сервере. Закрытый ключ (ingress-ci-00571303-sns-ift.key) должен быть надежно защищен и храниться в безопасном 
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+что такое csr?
+CSR расшифровывается как "Certificate Signing Request" или "Запрос на подпись сертификата". Это файл, который создается для запроса центра сертификации (CA) или подобной организации на подписание цифрового сертификата. Цифровой сертификат используется для аутентификации в сети, например, в контексте HTTPS для веб-серверов.
+
+CSR содержит информацию о сущности (владельце), для которой запрашивается сертификат, и открытый ключ, который будет включен в сертификат. Обычно CSR включает следующие данные:
+
+Общая информация о владельце (Subject):
+
+Common Name (CN): Обычно это доменное имя (например, www.example.com).
+Organization (O): Название организации.
+Organizational Unit (OU): Название подразделения организации.
+Country (C): Двухбуквенный код страны (например, US).
+Параметры открытого ключа:
+
+Алгоритм открытого ключа (например, RSA).
+Длина открытого ключа (например, 2048 бит).
+Дополнительные параметры, такие как расширенные альтернативные имена (Subject Alternative Names):
+
+Эти данные могут включать другие доменные имена, IP-адреса и т.д.
+Процесс создания CSR обычно включает в себя генерацию пары открытого и закрытого ключей. Закрытый ключ хранится в тайне и используется в будущем для расшифровки данных, подписанных открытым ключом.
+
+CSR отправляется центру сертификации, который подписывает его своим закрытым ключом, создавая цифровой сертификат. Этот сертификат затем может быть использован веб-сервером или другими сетевыми службами для обеспечения безопасного обмена данными через шифрование.
+
