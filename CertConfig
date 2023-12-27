@@ -1,60 +1,54 @@
-CộopmmpoBarb þaňn KoHóurypauun cepTuộuKaTa
-X
-3ne
 [req]
-default bits - 2048
+default_bits - 2048
 distinguished_name - req_distinguished_name
 req_extensions = req_ext
-prompt
-no
-FAO
+prompt = no 
+
 [req_distinguished_ name]
-countryName-RU
+countryName = RU
 stateOrProvinceName = MOW
 localityName= MOW
-organizationName - Savings Bank of the Russian Federation
-commonName - ingress-ci00571303-sns-ift
+organizationName = Savings Bank of the Russian Federation
+commonName = ingress-ci00571303-sns-ift
+
 [req_ext]
-SubjectAltName
-@alt_ names
+SubjectAltName = @alt_ names
+
 [alt_names]
-DNS.1 - ingress-sns-in-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
-DNS.2 - ingress-sns-in-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
-DNS.3 - ingress-sns-core-https.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
-DNS.4 - ingress-sns-core-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
-DNS.5 - ingress-sns-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
-DNS.6 - ingress-sns-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
-DNS.7
-ingress-sns-in-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbnf.ru
-DNS.8
-ingress-sns-in-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
-DNS.9
-ingress-sns-core-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
-DNS.10
-ingress-sns-core-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
-DNS.11 - ingress-sns-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
-DNS.12 - ingress-sns-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
-DNS.13 - ingress-sns-uex-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
-DNS.14 - ingress-sns-uex-ott.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
-DNS.15 - ingress-sns-uex-https.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
-DNS.16 - ingress-sns-uex-ott.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
-DNS.17 - ingress-sns-ui-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
-DNS.18 - ingress-sns-ui-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
-DNS.19 - ingress-sns-ui-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
-GEN
+DNS.1 = ingress-sns-in-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.2 = ingress-sns-in-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.3 = ingress-sns-core-https.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.4 = ingress-sns-core-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.5 =  ingress-sns-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.6 = ingress-sns-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.7 = ingress-sns-in-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbnf.ru
+DNS.8 = ingress-sns-in-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.9 = ingress-sns-core-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.10 = ingress-sns-core-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.11 = ingress-sns-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.12 = ingress-sns-ott.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
+DNS.13 = ingress-sns-uex-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.14 = ingress-sns-uex-ott.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.15 = ingress-sns-uex-https.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
+DNS.16 = ingress-sns-uex-ott.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
+DNS.17 = ingress-sns-ui-https.ci00571303-iiftgenlds-rcsns.apps.ift-genl-ds.delta.sbrf.ru
+DNS.18 = ingress-sns-ui-ott.ci00571303-iiftgenlds-rcsns.apps.ift-gen1-ds.delta.sbrf.ru
+DNS.19 = ingress-sns-ui-https.ci00571303-iiftgenldm-rcsns.apps.ift-gen1-dm.delta.sbrf.ru
 DNS.20 = ingress-sns-ui-ott.ci00571303-iiftgenldm-rcsns.apps.ift-genl-dm.delta.sbrf.ru
-DNS.21 - sns-in.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
-DNS.22 - sns-in.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
-DNS.23 - sns-core.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
-DNS.24 - sns-core.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
-DNS.25 sns-uex.mtls.ift-gen1-mlb.ocp- geo.delta.sbrf.ru
-DNS.26 - sns-uex.ott.ift-gen1-mlb.ocp-geo.delta,sbrf.ru
-I
-DNS.27- sns-ui.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
-DNS.28 sns-ui.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
-1
-DNS.29
-sns.mtls.ift-gen1-mlb.ocp-geo.delta.sbnf.ru
-DNS.30 - sns.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.21 = sns-in.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.22 = sns-in.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.23 = sns-core.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.24 = sns-core.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.25 = sns-uex.mtls.ift-gen1-mlb.ocp-geo.delta.sbrf.ru
+DNS.26 = sns-uex.ott.ift-gen1-mlb.ocp-geo.delta.sbrf.ru
+DNS.27 = sns-ui.mtls.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.28 = sns-ui.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+DNS.29 = sns.mtls.ift-gen1-mlb.ocp-geo.delta.sbnf.ru
+DNS.30 = sns.ott.ift-genl-mlb.ocp-geo.delta.sbrf.ru
+
 [v3_ext]
-authoritykeyIdentifier-keyid,issuer:always
+authoritykeyIdentifier=keyid,issuer:always
+basicConstraints=CA:FALSE
+keyUsage=keyEncipherment,dataEncipherment
+extendedKeyUsage=serverAuth,clientAuth
+subjectAltName=@alt_names
